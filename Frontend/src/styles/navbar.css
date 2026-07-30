@@ -1,0 +1,182 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 7%;
+  height: 82px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #ececec;
+
+  transition: 0.3s ease;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand a {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  transition: .35s ease;
+}
+
+.navbar-logo:hover{
+    transform:scale(1.08);
+}
+
+.navbar ul{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    color:#1f2937;
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:.3px;
+    transition:.3s ease;
+}
+
+/* Elegant underline */
+
+.navbar ul li a::after{
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:2px;
+
+    background:#2563eb;
+
+    transition:.35s ease;
+}
+
+.navbar ul li:hover a{
+    color:#2563eb;
+}
+
+.navbar ul li:hover a::after{
+    width:100%;
+}
+
+/* User Name */
+
+.navbar ul li:nth-last-child(2) a{
+    color:#2563eb;
+    font-weight:600;
+}
+
+/* Logout */
+
+.btn-logout{
+
+    padding:10px 20px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:8px;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:.3s ease;
+}
+
+.btn-logout:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 20px rgba(37,99,235,.18);
+}
+
+/* Cart Badge */
+
+.cart-count{
+
+    margin-left:5px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:12px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.navbar{
+
+padding:0 25px;
+
+}
+
+.navbar ul{
+
+gap:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+height:auto;
+
+padding:18px;
+
+gap:18px;
+
+}
+
+.navbar ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:18px;
+
+}
+
+}

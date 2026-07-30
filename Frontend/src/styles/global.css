@@ -1,0 +1,395 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   DESIGN TOKENS
+=========================== */
+
+:root{
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+  --primary-light:#60a5fa;
+
+  --secondary:#f59e0b;
+  --success:#22c55e;
+  --danger:#ef4444;
+
+  --gray-50:#f8fafc;
+  --gray-100:#f1f5f9;
+  --gray-200:#e2e8f0;
+  --gray-300:#cbd5e1;
+  --gray-500:#64748b;
+  --gray-700:#334155;
+  --gray-900:#0f172a;
+
+  --text:var(--gray-900);
+  --text-light:var(--gray-500);
+
+  --bg:#f8fafc;
+  --surface:#ffffff;
+
+  --border:#e2e8f0;
+
+  --radius:16px;
+
+  --shadow-sm:0 2px 8px rgba(15,23,42,.05);
+  --shadow-md:0 12px 28px rgba(15,23,42,.08);
+  --shadow-lg:0 25px 60px rgba(15,23,42,.12);
+
+  --transition:.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#fff,#f8fafc);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+  transition:var(--transition);
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+  background:none;
+}
+
+ul{
+  list-style:none;
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+.container{
+  width:min(1320px,92%);
+  margin:auto;
+}
+
+section{
+  padding:80px 0;
+}
+
+.grid{
+  display:grid;
+  gap:2rem;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1{
+  font-size:clamp(2.8rem,6vw,4.8rem);
+  line-height:1.1;
+  font-weight:800;
+  letter-spacing:-2px;
+}
+
+h2{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  margin-bottom:1rem;
+  line-height:1.2;
+}
+
+h3{
+  font-size:1.5rem;
+  font-weight:700;
+}
+
+h4{
+  font-size:1.2rem;
+  font-weight:600;
+}
+
+p{
+  color:var(--text-light);
+  line-height:1.8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+
+  padding:14px 30px;
+
+  border-radius:14px;
+
+  background:var(--primary);
+  color:#fff;
+
+  font-weight:600;
+
+  transition:var(--transition);
+
+  box-shadow:0 12px 30px rgba(37,99,235,.18);
+}
+
+.btn:hover{
+  background:var(--primary-dark);
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(37,99,235,.25);
+}
+
+.btn:active{
+  transform:scale(.97);
+}
+
+.btn-secondary{
+  background:var(--secondary);
+}
+
+.btn-danger{
+  background:var(--danger);
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+
+  box-shadow:var(--shadow-sm);
+
+  transition:var(--transition);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-group{
+  margin-bottom:1.4rem;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:.5rem;
+  font-weight:600;
+}
+
+.form-control{
+  width:100%;
+  padding:15px 18px;
+
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  background:white;
+
+  transition:var(--transition);
+}
+
+.form-control:hover{
+  border-color:#94a3b8;
+}
+
+.form-control:focus{
+  border-color:var(--primary);
+
+  box-shadow:
+  0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.loading{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:300px;
+
+  font-size:1.1rem;
+  font-weight:600;
+
+  color:var(--primary);
+}
+
+/* ===========================
+   UTILITIES
+=========================== */
+
+.text-center{text-align:center;}
+
+.flex{
+  display:flex;
+}
+
+.flex-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.flex-between{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.w-100{
+  width:100%;
+}
+
+.mt-1{margin-top:.5rem;}
+.mt-2{margin-top:1rem;}
+.mt-3{margin-top:2rem;}
+.mt-4{margin-top:3rem;}
+
+.mb-1{margin-bottom:.5rem;}
+.mb-2{margin-bottom:1rem;}
+.mb-3{margin-bottom:2rem;}
+.mb-4{margin-bottom:3rem;}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+.fade-up{
+  animation:fadeUp .7s ease both;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(35px);
+}
+
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#eef2ff;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(#60a5fa,#2563eb);
+  border-radius:999px;
+}
+
+/* ===========================
+   SELECTION
+=========================== */
+
+::selection{
+  background:var(--primary);
+  color:white;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+section{
+padding:70px 0;
+}
+
+.container{
+width:94%;
+}
+
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:2.5rem;
+}
+
+h2{
+font-size:2rem;
+}
+
+.grid{
+gap:1.5rem;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+h1{
+font-size:2rem;
+}
+
+h2{
+font-size:1.6rem;
+}
+
+body{
+font-size:15px;
+}
+
+}
