@@ -14,12 +14,16 @@ connectDB();
 // Initialize express app
 const app = express();
 //cors is used to allow cross-origin requests from different domains. It is a security feature implemented by web browsers to prevent malicious websites from accessing resources on other domains without permission.
-app.use(cors(
-    {
-        origin:['http://localhost:5173','http://127.0.0.1:5173'],
-        credentials:true
-    }
-));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://127.0.0.1:5173",
+      process.env.FRONTEND_URL,
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
